@@ -9,6 +9,7 @@ public class Command {
 		private String ADDRESS;
 		private String PETTYPE;
 		private String PETRACE;
+		
 		public String getID() {
 			return ID;
 		}

@@ -23,8 +23,6 @@ public class SampleController {
 	@RequestMapping(value = "/sample/openRegister.do")
 	public ModelAndView openRegister(Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("/sample/register");
-		List<Map<String, Object>> list = sampleService.selectBoardList(commandMap);
-		mv.addObject("list", list);
 		return mv;
 	}
 	
