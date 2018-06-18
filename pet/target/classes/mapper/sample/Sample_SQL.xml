@@ -18,27 +18,54 @@
         ]]>
     </select>
     
-	<insert id="insertBoard" parameterType="command">
+<!-- 	<insert id="insertBoard" parameterType="command"> -->
+<!-- 	    <![CDATA[ -->
+<!-- 	        INSERT INTO TB_BOARD -->
+<!-- 	        ( -->
+<!-- 	            IDX, -->
+<!-- 	            TITLE, -->
+<!-- 	            CONTENTS, -->
+<!-- 	            HIT_CNT, -->
+<!-- 	            DEL_GB, -->
+<!-- 	            CREA_DTM, -->
+<!-- 	            CREA_ID -->
+<!-- 	        ) -->
+<!-- 	        VALUES -->
+<!-- 	        ( -->
+<!-- 	            SEQ_TB_BOARD_IDX.NEXTVAL, -->
+<!-- 	            #{TITLE}, -->
+<!-- 	            #{CONTENTS}, -->
+<!-- 	            0, -->
+<!-- 	            'N', -->
+<!-- 	            SYSDATE, -->
+<!-- 	            'Admin' -->
+<!-- 	        ) -->
+<!-- 	    ]]> -->
+<!-- 	</insert> -->
+
+	<insert id="insertinfo" parameterType="command">
 	    <![CDATA[
-	        INSERT INTO TB_BOARD
+	        INSERT INTO MEMBER
 	        (
-	            IDX,
-	            TITLE,
-	            CONTENTS,
-	            HIT_CNT,
-	            DEL_GB,
-	            CREA_DTM,
-	            CREA_ID
+	            USER_ID,
+	            USER_PASS,
+	            USER_NM,
+	            USER_PHONE,
+	            USER_EMAIL,
+	            USER_ADDR,
+	            USER_PETTYPE,
+	            USER_PETRACE
 	        )
 	        VALUES
 	        (
-	            SEQ_TB_BOARD_IDX.NEXTVAL,
-	            #{TITLE},
-	            #{CONTENTS},
-	            0,
-	            'N',
-	            SYSDATE,
-	            'Admin'
+	            #{userid},
+	            #{pwd},
+	            #{name},
+	            #{phone},
+	            #{email},
+	            #{address},
+	            #{pettype},
+	            #{petrace}    
 	        )
 	    ]]>
 	</insert>
