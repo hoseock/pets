@@ -8,88 +8,67 @@
 <script src="../js/jquery/jquery-3.3.1.js"></script>
 <script>
 function checksubmit(){
+	if($('#id').val()==""){
+		alert("id을 입력하세요");	
+		return false;
+	}
+	if($('#psw').val()==""){
+		alert("비밀 번호를 입력하세요");
+		return false;
+	}
+	if($('#pswCheck').val()==""){
+		alert("비밀번호를 확인해주세요");
+		return false;
+	}
+	if($('#psw').val() != $('#pswCheck').val()){
+		$('font[name=check]').text('');
+		$('font[name=check]').html("암호틀림");
+		return false;
+	}
 	if($('#name').val()==""){
-		alert("이름을 입력하세요");	
+		alert("이름을 입력하세요");
+		return false;
+	}
+	if($('#phone').val()==""){
+		alert("핸드폰 번호를 입력하세요");
+		return false;
+	}
+	if($('#email').val()==""){
+		alert("메일주소를 입력하세요");
+		return false;
+	}
+	if($('#address').val()==""){
+		alert("주소를 입력하세요");
+		return false;
+	}
+	if($('#pettype').val()==""){
+		alert("애완동물 종류를 입력하세요");
+		return false;
+	}
+	if($('#petrace').val()==""){
+		alert("애완동물 품종를 입력하세요");
 		return false;
 	}else{
 		return true;
-		
+	}
+	
 }
 
-// 	$(function checkid(){
-// 		$('#checkId').on("click", function(){
-// 			if($('#id').val()==""){
-// 				alert("id를 입력하시오.");
-// 				$('#id').focus();
-// 				return false;
-// 			}else{
-// 		    	var id = $('#id').val();
-// 				console.log(id);
-// 		    	var comSubmit = new ComSubmit();
-// 		    	comSubmit.setUrl("<c:url value='/sample/checkId.do' />");
-// 		    	comSubmit.addParam("USER_ID", id);
-// 		    	comSubmit.submit();
-// 		    	return true;
-// 			}
-// 		});
-// 	});
-// $(function(){
-// 	$('#psw').keyup(function() {
-// 		$('font[name=check]').text('');
-// 	}); //#user_pass.keyup
-// 	$('#pswCheck').keyup(function() {
-// 		if ($('#psw').val() != $('#pswCheck').val()) {
-// 			$('font[name=check]').text('');
-// 			$('font[name=check]').html("암호틀림");
-// 			$('#psw').focus();
-// 			return false;
-// 		}else{
-// 			$('font[name=check]').text('');
-// 			$('font[name=check]').html("암호맞음");
-// 			$('#name').focus();
-// 			return true;
-// 		}
-// 	});//#chpass.keyup
-// 	$('#email').keyup(function(){
-// 		if($('#phone').val()==""){
-// 			alert("핸드폰 번호를 입력하세요");
-// 			$('#phone').focus();
-// 			return false;
-// 		}else return true;
-// 	});
 
-// 	$('#address').keyup(function(){
-// 		if($('#email').val()==""){
-// 			alert("메일주소를 입력하세요");
-// 			$('#email').focus();
-// 			return false;
-// 		}else return true;
-// 	});
-	
-// 	$('#pettype').keyup(function(){
-// 		if($('#address').val()==""){
-// 			alert("주소를 입력하세요");
-// 			$('#address').focus();
-// 			return false;
-// 		}else return true;
-// 	});
-
-// 	$('#petrace').keyup(function(){
-// 		if($('#pettype').val()==""){
-// 			alert("애완동물 종류를 입력하세요");
-// 			$('#pettype').focus();
-// 			return false;
-// 		}else return true;
-// 	});
-
-// 	$('#petrace').keyup(function(){
-// 		if($('#petrace').val()==""){
-// 			alert("애완동물 품종를 입력하세요");
-// 			$('#petrace').focus();
-// 			return false;
-// 		}else return true;
-// 	});
-// });
+$(function checkid(){
+	$('#checkId').on("click", function(){
+		if($('#id').val()==""){
+			alert("id를 입력하세요.");
+			$('#id').focus();
+			return false;
+		}else{
+			var id = $('#id').val();
+			var url = "/sample/checkId.do"+id;
+			win=window.open(url,"idCheck","width=400, height=400, left=100, top=100");
+			return true;
+		}
+	});
+});
 </script>
 </head>
 <body>
