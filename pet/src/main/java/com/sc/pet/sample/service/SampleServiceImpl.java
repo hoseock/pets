@@ -35,6 +35,12 @@ public class SampleServiceImpl implements SampleService{
 		// TODO Auto-generated method stub
 		sampleDAO.insertInfo(command);
 	}
+	
+	@Override
+	public void checkId(Command command) throws Exception {
+		// TODO Auto-generated method stub
+		sampleDAO.checkId(command);
+	}
 
 	@Override
 	public Map<String, Object> selectBoardDetail(Command command) throws Exception {
@@ -53,7 +59,6 @@ public class SampleServiceImpl implements SampleService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-     
 
 
 //	@Override

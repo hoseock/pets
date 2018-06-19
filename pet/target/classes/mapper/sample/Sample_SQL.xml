@@ -18,32 +18,11 @@
         ]]>
     </select>
     
-<!-- 	<insert id="insertBoard" parameterType="command"> -->
-<!-- 	    <![CDATA[ -->
-<!-- 	        INSERT INTO TB_BOARD -->
-<!-- 	        ( -->
-<!-- 	            IDX, -->
-<!-- 	            TITLE, -->
-<!-- 	            CONTENTS, -->
-<!-- 	            HIT_CNT, -->
-<!-- 	            DEL_GB, -->
-<!-- 	            CREA_DTM, -->
-<!-- 	            CREA_ID -->
-<!-- 	        ) -->
-<!-- 	        VALUES -->
-<!-- 	        ( -->
-<!-- 	            SEQ_TB_BOARD_IDX.NEXTVAL, -->
-<!-- 	            #{TITLE}, -->
-<!-- 	            #{CONTENTS}, -->
-<!-- 	            0, -->
-<!-- 	            'N', -->
-<!-- 	            SYSDATE, -->
-<!-- 	            'Admin' -->
-<!-- 	        ) -->
-<!-- 	    ]]> -->
-<!-- 	</insert> -->
+    <select id = "checkId" parameterType = "command" resultType="int">
+    	SELECT COUNT(*) FROM USER WHERE ID = #{id}
+	</select>  
 
-	<insert id="insertinfo" parameterType="command">
+	<insert id="insertInfo" parameterType="command">
 	    <![CDATA[
 	        INSERT INTO MEMBER
 	        (
@@ -58,14 +37,14 @@
 	        )
 	        VALUES
 	        (
-	            #{userid},
-	            #{pwd},
-	            #{name},
-	            #{phone},
-	            #{email},
-	            #{address},
-	            #{pettype},
-	            #{petrace}    
+	            #{ID},
+	            #{PASSWORD},
+	            #{NAME},
+	            #{PHONE},
+	            #{EMAIL},
+	            #{ADDRESS},
+	            #{PETTYPE},
+	            #{PETRACE}    
 	        )
 	    ]]>
 	</insert>

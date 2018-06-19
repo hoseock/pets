@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sc.pet.sample.command.Command;
@@ -31,6 +32,13 @@ public class SampleController {
 	    ModelAndView mv = new ModelAndView("redirect:/sample/openRegister.do");
 	    sampleService.insertInfo(command);
 	    return mv;
+	}
+	
+	@RequestMapping(value = "/sapmle/checkId.do", method = RequestMethod.POST)
+	public ModelAndView checkId(Command command) throws Exception {
+		ModelAndView mv = new ModelAndView("redirect:/sample/insertInfo.do");
+		sampleService.checkId(command);
+		return mv;
 	}
 	
 //	@RequestMapping(value = "/sample/openBoardList.do")
