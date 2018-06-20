@@ -18,9 +18,9 @@
         ]]>
     </select>
     
-    <select id = "checkId" parameterType = "command" resultType="int">
+    <select id = "joinDAO_idDuplChk" parameterType = "String" resultType = "int">
     	SELECT COUNT(*) FROM USER WHERE ID = #{id}
-	</select>  
+	</select>
 
 	<insert id="insertInfo" parameterType="command">
 	    <![CDATA[
