@@ -37,7 +37,7 @@ public class SampleServiceImpl implements SampleService{
 	}
 	
 	@Override
-	public String checkId(Command command) throws Exception {
+	public void checkId(Command command) throws Exception {
 		// TODO Auto-generated method stub
 		sampleDAO.checkId(command);
 	}
