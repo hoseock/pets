@@ -24,14 +24,16 @@
 
 	<insert id="insertInfo" parameterType="command">
 	    <![CDATA[
-	        INSERT INTO MEMBER
+	        INSERT INTO MEMBERS
 	        (
 	            USER_ID,
 	            USER_PASS,
 	            USER_NM,
 	            USER_PHONE,
 	            USER_EMAIL,
-	            USER_ADDR,
+	            USER_PCODE,
+	            USER_ADDR1,
+	            USER_ADDR2,
 	            USER_PETTYPE,
 	            USER_PETRACE
 	        )
@@ -42,7 +44,9 @@
 	            #{NAME},
 	            #{PHONE},
 	            #{EMAIL},
-	            #{ADDRESS},
+	            #{PCODE},
+	            #{ADDR1},
+	            #{ADDR2},
 	            #{PETTYPE},
 	            #{PETRACE}    
 	        )

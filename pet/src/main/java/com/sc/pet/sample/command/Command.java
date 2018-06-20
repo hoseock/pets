@@ -6,7 +6,9 @@ public class Command {
 		private String NAME;
 		private String PHONE;
 		private String EMAIL;
-		private String ADDRESS;
+		private String PCODE;
+		private String ADDR1;
+		private String ADDR2;
 		private String PETTYPE;
 		private String PETRACE;
 		
@@ -40,12 +42,6 @@ public class Command {
 		public void setEMAIL(String eMAIL) {
 			EMAIL = eMAIL;
 		}
-		public String getADDRESS() {
-			return ADDRESS;
-		}
-		public void setADDRESS(String aDDRESS) {
-			ADDRESS = aDDRESS;
-		}
 		public String getPETTYPE() {
 			return PETTYPE;
 		}
@@ -58,5 +54,24 @@ public class Command {
 		public void setPETRACE(String pETRACE) {
 			PETRACE = pETRACE;
 		}
+		public String getPCODE() {
+			return PCODE;
+		}
+		public void setPCODE(String pCODE) {
+			PCODE = pCODE;
+		}
+		public String getADDR1() {
+			return ADDR1;
+		}
+		public void setADDR1(String aDDR1) {
+			ADDR1 = aDDR1;
+		}
+		public String getADDR2() {
+			return ADDR2;
+		}
+		public void setADDR2(String aDDR2) {
+			ADDR2 = aDDR2;
+		}
+		
 	
 }
