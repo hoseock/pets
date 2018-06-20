@@ -21,8 +21,8 @@ public class SampleDAO extends AbstractDAO {
 	public void insertInfo(Command command) throws Exception{
 	    insert("sample.insertInfo", command);
 	}
-	public String checkId(Command command) throws Exception{
-	  return selectOne("sample.checkId", command);
+	public void checkId(Command command) throws Exception{
+	    selectOne("sample.checkId", command);
 	}
 //	
 //	public int updateHitCnt(Command command) throws Exception{
