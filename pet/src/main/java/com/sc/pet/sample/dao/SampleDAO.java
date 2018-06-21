@@ -21,10 +21,11 @@ public class SampleDAO extends AbstractDAO {
 	public void insertInfo(Command command) throws Exception{
 	    insert("sample.insertInfo", command);
 	}
-	public Object checkId(Command command) throws Exception{
-	    return selectOne("sample.checkId", command);
+	public int checkId(Command command) throws Exception{
+		int result=(Integer)selectOne("sample.checkId", command);
+	    return result;
 	}
-//	
+
 //	public int updateHitCnt(Command command) throws Exception{
 //	    return update("sample.updateHitCnt", command);
 //	}

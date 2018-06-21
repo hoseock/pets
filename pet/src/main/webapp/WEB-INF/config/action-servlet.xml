@@ -16,7 +16,8 @@
             <bean id="loggerInterceptor" class="com.sc.pet.common.logger.LoggerInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
-     
+     <mvc:annotation-driven/>
+ 
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
      
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0" />
@@ -27,4 +28,8 @@
         p:viewClass="org.springframework.web.servlet.view.JstlView"
         p:prefix="/WEB-INF/jsp/" p:suffix=".jsp">
     </bean>
+    <bean id="jsonView" class="net.sf.json.spring.web.servlet.view.JsonView"/>  
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">  
+    	<property name="order" value="1"></property>
+	</bean> 
 </beans>

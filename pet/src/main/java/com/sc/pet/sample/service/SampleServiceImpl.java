@@ -40,25 +40,13 @@ public class SampleServiceImpl implements SampleService{
 	@Override
 	public int checkId(Command command) throws Exception {
 		// TODO Auto-generated method stub
-		return (Integer) sampleDAO.checkId(command);
+		return sampleDAO.checkId(command);
 	}
 
 	@Override
 	public Map<String, Object> selectBoardDetail(Command command) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public int updateBoard(Command command) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int deleteBoard(Command command) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 
@@ -80,7 +68,4 @@ public class SampleServiceImpl implements SampleService{
 //		return sampleDAO.deleteBoard(command);
 //	}
 
-
-
- 
 }

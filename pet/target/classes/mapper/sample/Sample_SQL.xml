@@ -4,22 +4,23 @@
 <mapper namespace="sample">
  	<select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
         <![CDATA[
-            SELECT
-                IDX,
-                TITLE,
-                CONTENTS,
-                HIT_CNT,
-                CREA_DTM
-            FROM
-                TB_BOARD
-            WHERE
-                DEL_GB = 'N'
+            SELECT IDX,
+                   TITLE,
+                   CONTENTS,
+                   HIT_CNT,
+                   CREA_DTM
+              FROM
+                   TB_BOARD
+             WHERE
+                   DEL_GB = 'N'
             ORDER BY IDX DESC
         ]]>
     </select>
     
-    <select id = "joinDAO_idDuplChk" parameterType = "String" resultType = "int">
-    	SELECT COUNT(*) FROM USER WHERE ID = #{id}
+    <select id = "checkId" parameterType = "String" resultType = "int">
+    	SELECT COUNT(*) 
+    	  FROM MEMBERS 
+    	 WHERE USER_ID = #{ID}
 	</select>
 
 	<insert id="insertInfo" parameterType="command">
@@ -76,6 +77,7 @@
 	            IDX = #{IDX}       
 	    ]]>
 	</select>
+	
 	<update id="updateBoard" parameterType="command">
 	    <![CDATA[
 	        UPDATE TB_BOARD

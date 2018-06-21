@@ -36,7 +36,7 @@ public class AbstractDAO {
         return sqlSession.delete(queryId, params);
     }
      
-    public String selectOne(String queryId){
+    public Object selectOne(String queryId){
         printQueryId(queryId);
         return sqlSession.selectOne(queryId);
     }
@@ -44,11 +44,6 @@ public class AbstractDAO {
     public Object selectOne(String queryId, Object params){
         printQueryId(queryId);
         return sqlSession.selectOne(queryId, params);
-    }
-    
-    public int checkId(String queryId){
-        System.out.println("UserDAO.getUser() 호출");
-        return sqlSession.selectOne(queryId);
     }
      
     @SuppressWarnings("rawtypes")

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,8 +10,13 @@
 <script src="../js/jquery/jquery-3.3.1.js"></script>
 <script>
 function checksubmit(){
+	var idcheck=0;
 	if($('#id').val()==""){
 		alert("id을 입력하세요");	
+		return false;
+	}
+	if($('#psw').val()<5){
+		alert("비밀 번호 길이는 5자 이상으로 해주세요.");
 		return false;
 	}
 	if($('#psw').val()==""){
@@ -66,29 +73,23 @@ $(function(){
 		 var id = $('#id').val();
 		 $.ajax({
 		     type : 'POST',  
-		     url : '/sample/checkId.do',  
-		     data:{id : id},	    
-		     success : function(msg) {
-		      alert(mag);
-		      } 
-		  });  
+		     url : "<c:url value='/sample/checkId.do' />",  
+		     data:{id : id},	
+		     dataType:'json',
+		     success : function(data) {
+		   	 	if(data.result==0){
+		    		$('#chkMsg').html("사용가능한 아이디입니다.");
+		    		$button_joinus = $('#submit').attr('disabled', false);
+		     	}else{
+		     		$('#chkMsg').html("아이디가 중복입니다.");
+		     		$button_joinus = $('#submit').attr('disabled', true);
+		     		return false;
+		     	}
+		     }
+		});
 	});
 });
 
-// $(function checkid(){
-// 	$('#checkId').on("click", function(){
-// 		if($('#id').val()==""){
-// 			alert("id를 입력하세요.");
-// 			$('#id').focus();
-// 			return false;
-// 		}else{
-// 			var id = $('#id').val();
-// 			var url = "/sample/checkId.do"+id;
-// 			win=window.open(url,"idCheck","width=400, height=400, left=100, top=100");
-// 			return true;
-// 		}
-// 	});
-// });
 </script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
@@ -147,23 +148,25 @@ $(function(){
 <body>
 	<center>
 		<h1>회원가입 페이지</h1>
-		<form name="regiform" 
-			accept-charset="UTF-8" action="insertInfo.do" onsubmit='return checksubmit();'>
+		<form name="regiform" id="regiform" accept-charset="UTF-8" action="insertInfo.do"
+			onsubmit='return checksubmit();'>
 			<table>
 				<tr>
 					<td>아이디</td>
 					<td><input type="text" name="ID" id="id" placeholder="아이디">
-					<input type="button" id="checkId" value="중복확인" />
-					<span id = "chkMsg"></span> </td>
+						<input type="button" id="checkId" value="중복확인" /> <span
+						id="chkMsg"></span></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="password" name="PASSWORD" id="psw" placeholder="비밀번호"></td>
+					<td><input type="password" name="PASSWORD" id="psw"
+						placeholder="비밀번호(5자 이상)"></td>
 				</tr>
 				<tr>
 					<td>비밀번호 확인</td>
-					<td><input type="password" name="PASSWORD_CHECK" id="pswCheck" placeholder="비밀번호 확인"><font
-						name="check" size="2" color="red"></font></td>
+					<td><input type="password" name="PASSWORD_CHECK" id="pswCheck"
+						placeholder="비밀번호 확인"><font name="check" size="2"
+						color="red"></font></td>
 				</tr>
 				<tr>
 					<td>이름</td>
@@ -171,32 +174,37 @@ $(function(){
 				</tr>
 				<tr>
 					<td>핸드폰 번호</td>
-					<td><input type="text" name="PHONE" id="phone" placeholder="핸드폰 번호"></td>
+					<td><input type="text" name="PHONE" id="phone"
+						placeholder="핸드폰 번호"></td>
 				</tr>
 				<tr>
 					<td>이메일</td>
-					<td><input type="text" name="EMAIL" id="email" placeholder="이메일"></td>
+					<td><input type="text" name="EMAIL" id="email"
+						placeholder="이메일"></td>
 				</tr>
 				<tr>
 					<td>주소</td>
-					<td><input type="text" id="postcode" placeholder="우편번호" name=PCODE>
-						<input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-						<input type="text" id="roadAddress" placeholder="도로명주소" name=ADDR1>
+					<td><input type="text" id="postcode" placeholder="우편번호"
+						name=PCODE> <input type="button"
+						onclick="execDaumPostcode()" value="우편번호 찾기"><br> <input
+						type="text" id="roadAddress" placeholder="도로명주소" name=ADDR1>
 						<input type="text" id="jibunAddress" placeholder="지번주소" name=ADDR2><br>
-						<span id="guide" style="color:#999"></span></td>
+						<span id="guide" style="color: #999"></span></td>
 				</tr>
 				<tr>
 					<td>펫 종류</td>
-					<td><input type="text" name="PETTYPE" id="pettype" placeholder="애완동물 종류"></td>
+					<td><input type="text" name="PETTYPE" id="pettype"
+						placeholder="애완동물 종류"></td>
 				</tr>
 				<tr>
 					<td>품종</td>
-					<td><input type="text" name="PETRACE" id="petrace" placeholder="품종"></td>
+					<td><input type="text" name="PETRACE" id="petrace"
+						placeholder="품종"></td>
 				</tr>
 
 				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="가입하기"><input type="reset" value="다시작성"></td>
+					<td colspan="2" align="center"><input type="submit" 
+						value="가입하기" id="submit" disabled="false"><input type="reset" value="다시작성"></td>
 				</tr>
 			</table>
 		</form>

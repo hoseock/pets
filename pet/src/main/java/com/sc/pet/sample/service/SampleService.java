@@ -14,8 +14,4 @@ public interface SampleService {
    
     Map<String, Object> selectBoardDetail(Command command) throws Exception;
   
-    int updateBoard(Command command) throws Exception;
-    int deleteBoard(Command command) throws Exception;
-
-
 }
