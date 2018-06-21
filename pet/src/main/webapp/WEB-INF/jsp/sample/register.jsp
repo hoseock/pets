@@ -58,25 +58,37 @@ function checksubmit(){
 		return false;
 	}else{
 		return true;
-	}	
-	
+	}		
 }
 
-
-$(function checkid(){
+$(function(){
 	$('#checkId').on("click", function(){
-		if($('#id').val()==""){
-			alert("id를 입력하세요.");
-			$('#id').focus();
-			return false;
-		}else{
-			var id = $('#id').val();
-			var url = "/sample/checkId.do"+id;
-			win=window.open(url,"idCheck","width=400, height=400, left=100, top=100");
-			return true;
-		}
+		 var id = $('#id').val();
+		 $.ajax({
+		     type : 'POST',  
+		     url : '/sample/checkId.do',  
+		     data:{id : id},	    
+		     success : function(msg) {
+		      alert(mag);
+		      } 
+		  });  
 	});
 });
+
+// $(function checkid(){
+// 	$('#checkId').on("click", function(){
+// 		if($('#id').val()==""){
+// 			alert("id를 입력하세요.");
+// 			$('#id').focus();
+// 			return false;
+// 		}else{
+// 			var id = $('#id').val();
+// 			var url = "/sample/checkId.do"+id;
+// 			win=window.open(url,"idCheck","width=400, height=400, left=100, top=100");
+// 			return true;
+// 		}
+// 	});
+// });
 </script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
@@ -141,7 +153,8 @@ $(function checkid(){
 				<tr>
 					<td>아이디</td>
 					<td><input type="text" name="ID" id="id" placeholder="아이디">
-					<input type="button" id="checkId" value="중복확인" /></td>
+					<input type="button" id="checkId" value="중복확인" />
+					<span id = "chkMsg"></span> </td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>

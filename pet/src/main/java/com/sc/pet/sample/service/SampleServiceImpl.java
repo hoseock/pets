@@ -36,10 +36,11 @@ public class SampleServiceImpl implements SampleService{
 		sampleDAO.insertInfo(command);
 	}
 	
+
 	@Override
-	public void checkId(Command command) throws Exception {
+	public int checkId(Command command) throws Exception {
 		// TODO Auto-generated method stub
-		sampleDAO.checkId(command);
+		return (Integer) sampleDAO.checkId(command);
 	}
 
 	@Override

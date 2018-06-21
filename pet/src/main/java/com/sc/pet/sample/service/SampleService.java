@@ -10,7 +10,7 @@ public interface SampleService {
 
     void Register(Command command) throws Exception;
     void insertInfo(Command command) throws Exception;
-    void checkId(Command command) throws Exception;
+    int checkId(Command command) throws Exception;
    
     Map<String, Object> selectBoardDetail(Command command) throws Exception;
   
