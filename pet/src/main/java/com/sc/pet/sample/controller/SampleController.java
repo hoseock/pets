@@ -28,7 +28,7 @@ public class SampleController {
 	
 	@RequestMapping(value="/sample/insertInfo.do")
 	public ModelAndView insertBoard(Command command) throws Exception{
-	    ModelAndView mv = new ModelAndView("/../../index");
+	    ModelAndView mv = new ModelAndView("/../../main");
 	    sampleService.insertInfo(command);
 	    return mv;
 	}
@@ -41,7 +41,6 @@ public class SampleController {
 	    mv.addObject("result", result);
 	    return mv;
 	}
-	
 
 //	@RequestMapping(value = "/sample/openBoardList.do")
 //	public ModelAndView openSampleBoardList(Map<String, Object> commandMap) throws Exception {

@@ -93,9 +93,9 @@ $(function(){
 		   	 	if(data.result==0){
 		    		$('#chkMsg').html("사용가능한 아이디입니다.");
 		    		$('#chkMsg').css('color', 'blue');
-// 		    		$('#id').attr('disabled', true);
+		    		$('#id').attr('disabled', true);
 		    		$('#submit').attr('disabled', false);
-// 		    		$('#reInput').css('display','block');
+		    		$('#reInput').css('display','block');
 		     	}else{
 		     		$('#chkMsg').html("아이디가 중복입니다.");
 		     		$('#chkMsg').css('color', 'red');
@@ -106,14 +106,14 @@ $(function(){
 	});
 });
 
-// $(function(){
-// 	$('#reInput').on("click",function(){
-// 		$('#id').val("");
-// 		$('#chkMsg').html("");
-// 		$('#reInput').css('display','none')
-// 		$('#id').attr('disabled', false);		
-// 	});	
-// });
+$(function(){
+	$('#reInput').on("click",function(){
+		$('#id').val("");
+		$('#chkMsg').html("");
+		$('#reInput').css('display','none')
+		$('#id').attr('disabled', false);		
+	});	
+});
 
 </script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
