@@ -7,20 +7,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
+<style>
+button.reInput{
+	background-color: #4CAF50;
+}
+</style>
 <script src="../js/jquery/jquery-3.3.1.js"></script>
 <script>
+$(function(){
+	$('#reInput').css('display', 'none');
+});
 function checksubmit(){
-	var idcheck=0;
+	
 	if($('#id').val()==""){
 		alert("id을 입력하세요");	
 		return false;
 	}
-	if($('#psw').val()<5){
-		alert("비밀 번호 길이는 5자 이상으로 해주세요.");
-		return false;
-	}
 	if($('#psw').val()==""){
 		alert("비밀 번호를 입력하세요");
+		return false;
+	}
+	if($('#psw').val()<5){
+		alert("비밀 번호 길이는 5자 이상으로 해주세요.");
 		return false;
 	}
 	if($('#pswCheck').val()==""){
@@ -77,18 +85,35 @@ $(function(){
 		     data:{id : id},	
 		     dataType:'json',
 		     success : function(data) {
+		    	var idReg = /^[a-z]+[a-z0-9]{4,19}$/g;
+		    	   if( !idReg.test( $('#id').val() ) ) {
+		    	       alert("아이디는 영문자로 시작하는 5~20자 영문자 또는 숫자이어야 합니다.");
+		    	       return;
+		    	   }
 		   	 	if(data.result==0){
 		    		$('#chkMsg').html("사용가능한 아이디입니다.");
-		    		$button_joinus = $('#submit').attr('disabled', false);
+		    		$('#chkMsg').css('color', 'blue');
+// 		    		$('#id').attr('disabled', true);
+		    		$('#submit').attr('disabled', false);
+// 		    		$('#reInput').css('display','block');
 		     	}else{
 		     		$('#chkMsg').html("아이디가 중복입니다.");
-		     		$button_joinus = $('#submit').attr('disabled', true);
-		     		return false;
+		     		$('#chkMsg').css('color', 'red');
+		     		$('#submit').attr('disabled', true);
 		     	}
 		     }
 		});
 	});
 });
+
+// $(function(){
+// 	$('#reInput').on("click",function(){
+// 		$('#id').val("");
+// 		$('#chkMsg').html("");
+// 		$('#reInput').css('display','none')
+// 		$('#id').attr('disabled', false);		
+// 	});	
+// });
 
 </script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -145,6 +170,7 @@ $(function(){
     }
 </script>
 </head>
+
 <body>
 	<center>
 		<h1>회원가입 페이지</h1>
@@ -153,8 +179,9 @@ $(function(){
 			<table>
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="ID" id="id" placeholder="아이디">
-						<input type="button" id="checkId" value="중복확인" /> <span
+					<td><input type="text" name="ID" id="id" placeholder="아이디(5~20자)">
+						<input type="button" id="checkId" value="중복확인" /> 
+						<input type="button" id="reInput" value="아이디 다시 입력" /><span
 						id="chkMsg"></span></td>
 				</tr>
 				<tr>
