@@ -28,7 +28,7 @@ public class SampleController {
 	
 	@RequestMapping(value="/sample/insertInfo.do")
 	public ModelAndView insertBoard(Command command) throws Exception{
-	    ModelAndView mv = new ModelAndView("/../../index");
+	    ModelAndView mv = new ModelAndView("/../../main");
 	    sampleService.insertInfo(command);
 	    return mv;
 	}
