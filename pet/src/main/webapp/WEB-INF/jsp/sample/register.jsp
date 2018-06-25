@@ -18,9 +18,14 @@ $(function(){
 	$('#reInput').css('display', 'none');
 });
 function checksubmit(){
-	
 	if($('#id').val()==""){
 		alert("id을 입력하세요");	
+		return false;
+	}
+	if($('#id').val()!=$('#hidden').val()){
+		alert("아이디 중복 검사를 해주세요");
+		$('#chkMsg').html("아이디 중복 검사를 해주세요");
+		$('#chkMsg').css('color', 'red');
 		return false;
 	}
 	if($('#psw').val()==""){
@@ -93,9 +98,9 @@ $(function(){
 		   	 	if(data.result==0){
 		    		$('#chkMsg').html("사용가능한 아이디입니다.");
 		    		$('#chkMsg').css('color', 'blue');
-		    		$('#id').attr('disabled', true);
 		    		$('#submit').attr('disabled', false);
-		    		$('#reInput').css('display','block');
+		    		$id=$('#id').val();
+		    		$('#hidden').val($id);
 		     	}else{
 		     		$('#chkMsg').html("아이디가 중복입니다.");
 		     		$('#chkMsg').css('color', 'red');
@@ -106,14 +111,14 @@ $(function(){
 	});
 });
 
-$(function(){
-	$('#reInput').on("click",function(){
-		$('#id').val("");
-		$('#chkMsg').html("");
-		$('#reInput').css('display','none')
-		$('#id').attr('disabled', false);		
-	});	
-});
+// $(function(){
+// 	$('#reInput').on("click",function(){
+// 		$('#id').val("");
+// 		$('#chkMsg').html("");
+// 		$('#reInput').css('display','none')
+// 		$('#id').attr('disabled', false);		
+// 	});	
+// });
 
 </script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -181,6 +186,7 @@ $(function(){
 					<td>아이디</td>
 					<td><input type="text" name="ID" id="id" placeholder="아이디(5~20자)">
 						<input type="button" id="checkId" value="중복확인" /> 
+						<input type="hidden" id="hidden" value=""/>
 						<input type="button" id="reInput" value="아이디 다시 입력" /><span
 						id="chkMsg"></span></td>
 				</tr>
