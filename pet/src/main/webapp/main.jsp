@@ -1,13 +1,14 @@
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
- <link rel="stylesheet" type="text/css" href="/anifinder/css/main.css">
+ <link rel="stylesheet" type="text/css" href="/pet/css/main.css">
  <style>
  .mySlides {display:none;}
  </style>
 </head>
-<script type="text/javascript" src="/anifinder/js/slide.js"></script>
+<script type="text/javascript" src="/pet/js/slide.js"></script>
 <body class="main">
 <%@ include file="/WEB-INF/include/include-body.jsp"%>
 <%@ include file="/WEB-INF/include/include-header.jsp"%>
@@ -15,8 +16,8 @@
 	<div id="wrap">
 		<div id="header" class="main">
 			<h1>
-				<a title="pethelper" href="/anifinder/" target="_top">
-					<img border="0" src="/anifinder/resources/image/logo.jpg">
+				<a title="pethelper" href="/pet/" target="_top">
+					<img border="0" src="/pet/resources/image/logo.jpg">
 				</a>
 			</h1>
 			<div id="srch_wrap" class="search_area doctype_mode">
@@ -48,6 +49,11 @@
 							<p class="btn">
 								<button type="submit" id="login_btn"><span>로그인</span></button>
 							</p>
+							<p>
+								<a href="/pet/sample/openRegister.do"><span>회원가입</span></a>
+								<a href="/pet/sample/openRegister.do"><span>ID/</span></a>
+								<a href="/pet/sample/openRegister.do"><span>PW찾기</span></a>
+							</p>
 						</fieldset>
 	  				</form>
 				</div>
@@ -65,9 +71,9 @@
 			<div id="column_row" class="column_row">
 				<div id="slide_area">
 					<div id="slide_bar">
-					  <img class="mySlides" src="/anifinder/resources/image/ad2.jpg">
-					  <img class="mySlides" src="/anifinder/resources/image/ad3.jpg">
-					  <img class="mySlides" src="/anifinder/resources/image/ad4.jpg">
+					  <img class="mySlides" src="/pet/resources/image/ad2.jpg">
+					  <img class="mySlides" src="/pet/resources/image/ad3.jpg">
+					  <img class="mySlides" src="/pet/resources/image/ad4.jpg">
 					</div>
 					</div>
 				

@@ -13,6 +13,7 @@ button{border:0;background:none;cursor:pointer}
 .root{min-width:960px}
 #wrap {position:relative;text-align:left; }
 #container {margin: 0 auto; width: 960px;}
+
 /* header */
 #header{position: relative;height: 110px; }
 #header h1{display: block;margin: 0;position: absolute;top: 0; left: 0;height:110px;overflow-y:hidden;}
