@@ -41,7 +41,6 @@ public class SampleController {
 	    mv.addObject("result", result);
 	    return mv;
 	}
-	
 
 //	@RequestMapping(value = "/sample/openBoardList.do")
 //	public ModelAndView openSampleBoardList(Map<String, Object> commandMap) throws Exception {

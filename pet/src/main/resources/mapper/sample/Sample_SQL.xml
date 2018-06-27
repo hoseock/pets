@@ -41,15 +41,15 @@
 	        VALUES
 	        (
 	            #{ID},
-	            #{PASSWORD,jdbcType=VARCHAR2},
-	            #{NAME,jdbcType=VARCHAR2},
-	            #{PHONE,jdbcType=VARCHAR2},
-	            #{EMAIL,jdbcType=VARCHAR2},
-	            #{PCODE,jdbcType=VARCHAR2},
-	            #{ADDR1,jdbcType=VARCHAR2},
-	            #{ADDR2,jdbcType=VARCHAR2},
-	            #{PETTYPE,jdbcType=VARCHAR2},
-	            #{PETRACE,jdbcType=VARCHAR2}    
+	            #{PASSWORD},
+	            #{NAME},
+	            #{PHONE},
+	            #{EMAIL},
+	            #{PCODE},
+	            #{ADDR1},
+	            #{ADDR2},
+	            #{PETTYPE},
+	            #{PETRACE}    
 	        )
 	    ]]>
 	</insert>

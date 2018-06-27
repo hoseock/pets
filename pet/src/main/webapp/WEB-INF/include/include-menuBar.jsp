@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+=======
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="UTF-8"%>
+>>>>>>> branch 'master' of https://github.com/hoseock/pets.git
 <!DOCTYPE html>
 <html lang="ko">
 <head>
