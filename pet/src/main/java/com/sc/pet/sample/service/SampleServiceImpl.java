@@ -23,33 +23,27 @@ public class SampleServiceImpl implements SampleService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
 	public void Register(Command command) throws Exception {
 		// TODO Auto-generated method stub
-		sampleDAO.Register(command);
-		
+		sampleDAO.Register(command);	
 	}
 	@Override
 	public void insertInfo(Command command) throws Exception {
 		// TODO Auto-generated method stub
 		sampleDAO.insertInfo(command);
 	}
-	
-
 	@Override
 	public int checkId(Command command) throws Exception {
 		// TODO Auto-generated method stub
 		return sampleDAO.checkId(command);
 	}
-
 	@Override
 	public Map<String, Object> selectBoardDetail(Command command) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
+	
 //	@Override
 //	public Map<String, Object> selectBoardDetail(Command command) throws Exception {
 //		// TODO Auto-generated method stub
