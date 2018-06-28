@@ -107,6 +107,5 @@
 			</li>
 		</ul>
 	</nav>
-	<%@ include file="/WEB-INF/include/include-body.jsp"%>
 </body>
 </html>
