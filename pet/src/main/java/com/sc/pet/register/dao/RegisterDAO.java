@@ -13,13 +13,13 @@ public class RegisterDAO extends AbstractDAO {
 	@SuppressWarnings("unchecked")
 
 	public void Register(Command command) throws Exception{
-	    insert("sample.register", command);
+	    insert("register.register", command);
 	}
 	public void insertInfo(Command command) throws Exception{
-	    insert("sample.insertInfo", command);
+	    insert("register.insertInfo", command);
 	}
 	public int checkId(Command command) throws Exception{
-		int result=(Integer)selectOne("sample.checkId", command);
+		int result=(Integer)selectOne("register.checkId", command);
 	    return result;
 	}
 

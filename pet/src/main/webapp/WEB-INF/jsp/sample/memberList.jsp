@@ -25,9 +25,11 @@ div#wapper{
 		$(".delBtn").on("click",function(e){
 			e.preventDefault();
 			var $obj=(this.parentNode.parentNode.children[0].innerText);
+			var tr = (this.parentNode.parentNode);
 			commonModule.fn_ajax({ID:$obj},"<c:url value='/admin/deleteMember.do' />",
 					  function(data){
 						console.log(data.command.ID+"삭제");
+						tr.remove();
 					},function(){
 						
 					});
@@ -37,20 +39,20 @@ div#wapper{
 		$(".paaroBtn").on("click", function(e){
 			e.preventDefault();
 			var auth =(this.parentNode.parentNode.children[4].innerText);
+			var val = (this.parentNode.parentNode.children[4].firstChild);
 			var $obj=(this.parentNode.parentNode.children[0].innerText);
 			var url = "<c:url value='/admin/authorize.do' />";
-			var $paaro=$('.paaroBtn');
 			if(auth=="N"){	
-				commonModule.fn_ajax({ID:$obj,PAARO:auth},url,
+				commonModule.fn_ajax({ID:$obj},url,
 				  function(data){
-					console.dir(data);
+					val.text=data.result;
 				},function(){
 					
 				});
 			}else{
-				commonModule.fn_ajax({ID:$obj,PAARO:auth},"<c:url value='/admin/delAuthority.do' />",
+				commonModule.fn_ajax({ID:$obj},"<c:url value='/admin/delAuthority.do' />",
 				  function(data){
-					console.dir(data);
+					val.text=data.result;
 				  },function(){
 							 	
 				  });
