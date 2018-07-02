@@ -101,7 +101,7 @@
 			</li>
 			<li class="topMenuLi"><a class="menuLink" href="<c:url value='/notice/openBoardList.do' />" id="notice">공지사항</a></li>
 			<li class="topMenuLi"><a class="menuLink" href="<c:url value='/qa/openqAndA.do' />" id="qAndA">Q&A</a></li>
-			<li class="topMenuLi"><a class="menuLink" href="<c:url value='/sample/openSampleBoardList.do' />" id="list">자유게시판</a>
+			<li class="topMenuLi"><a class="menuLink" href="<c:url value='/board/openBoardList.do' />" id="list">자유게시판</a>
 			</li>
 		</ul>
 	</nav>
