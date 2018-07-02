@@ -33,7 +33,7 @@ button{border:0;background:none;cursor:pointer}
 .sub{}
 .column_row{position:relative;float:left;display:inline-block;width:720px;margin:30px 0 0;font-family: Malgun Gothic, "맑은 고딕", NanumGothic, "나눔고딕";}
 /* slide */
-.slide_area {width:720px;height:200px;overflow:hidden;}
+.slide_area {width:720px;height:400px;overflow:hidden;}
 .slide_bar{margin-left:50px;float:left;width:720px;height:400px;border:1px solid #e6e6e6;overflow:hidden;}
 
 /* ranking_bar */
