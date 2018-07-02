@@ -13,7 +13,9 @@ button.reInput{
 }
 </style>
 <script src="../js/jquery/jquery-3.3.1.js"></script>
+<script src='<c:url value="../js/jquery.min.js"/>'></script>
 <script src='<c:url value="../js/ajax.js"/>'></script>
+<script src='<c:url value="../js/jquery.oLoader.min.js"/>'></script>
 <script>
 $(function(){
 	$('#reInput').css('display', 'none');
@@ -93,12 +95,11 @@ $(function(){
  	    }else{
  	    	commonModule.fn_ajax({id:id},url,
  	    		function(data){
+ 	    		console.dir(data);
  	    			if(data.result==0){
- 	    				console.dir(data);
 			   			$('#chkMsg').html("사용가능한 아이디입니다.");
 			   			$('#chkMsg').css('color', 'blue');
 			    		$('#submit').attr('disabled', false);
-			    		//$id=$('#id').val();
 			    		$('#hidden').val($('#id').val());
 			     	}else{
 			     		console.dir(data);
@@ -106,8 +107,6 @@ $(function(){
 			     		$('#chkMsg').css('color', 'red');
 			     		$('#submit').attr('disabled', true);
 			     	}
- 	    	 },function(){	
- 	    	
  	    	 });
  	    }
 	});
@@ -168,7 +167,7 @@ $(function(){
 </script>
 </head>
 
-<body>
+<body class="body">
 	<center>
 		<h1>회원가입 페이지</h1>
 		<form name="regiform" id="regiform" accept-charset="UTF-8" action="insertInfo.do"

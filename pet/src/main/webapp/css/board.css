@@ -34,7 +34,6 @@ div#wapper{
 .board_list tbody tr td a{color:#777}
 .board_list tbody .notice td{background:#f6f6f6}
 .board_list tbody tr:hover td{background:#fafafa}
-
 /** pageNavi **/
 .page_navi{margin-top:40px;font-size:0;text-align:center}
 .page_navi *{display:inline-block;vertical-align:middle}
