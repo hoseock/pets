@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/sc/pet/board/controller/BoardController.java=UTF-8
+encoding//src/main/java/com/sc/pet/file/controller/FileController.java=UTF-8
 encoding//src/main/java/com/sc/pet/sample/controller/AdminController.java=UTF-8
 encoding//src/main/webapp/main.jsp=UTF-8
 encoding/<project>=UTF-8
