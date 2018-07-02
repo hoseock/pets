@@ -6,6 +6,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
+
 <style>
 div#content{
 	background-color:lightgray;

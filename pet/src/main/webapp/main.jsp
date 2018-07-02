@@ -49,6 +49,11 @@
 							<p class="btn">
 								<button type="submit" id="login_btn"><span>로그인</span></button>
 							</p>
+							<p>
+								<a href="/pet/sample/openRegister.do"><span>회원가입</span></a>
+								<a href="/pet/sample/openRegister.do"><span>ID/</span></a>
+								<a href="/pet/sample/openRegister.do"><span>PW찾기</span></a>
+							</p>
 						</fieldset>
 	  				</form>
 				</div>
