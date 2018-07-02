@@ -25,14 +25,19 @@ public class AdminDAO extends AbstractDAO {
 //		return (Map<String, Object>) selectOne("sample.selectBoardDetail", command);
 //	}
 	public int authorize(Command command) throws Exception{
-	    return update("sample.authorize", command);
+	    return update("admin.authorize", command);
 	}
 	public int delAuthority(Command command) throws Exception{
-		return update("sample.delAuthority", command);
+		return update("admin.delAuthority", command);
 	}
 //	
 	public int deleteMember(Command command) throws Exception{
-	    return delete("sample.deleteMember", command);
+	    return delete("admin.deleteMember", command);
+	}
+	
+	public String checkAuth(Command command) throws Exception{
+		String result=(String) selectOne("admin.checkAuth", command);
+	    return result;
 	}
 
 }

@@ -17,4 +17,5 @@ public interface AdminService {
 	int authorize(Command command) throws Exception;
 	int delAuthority(Command command) throws Exception;
 	int deleteMember(Command command) throws Exception;
+	String checkAuth(Command command) throws Exception;
 }

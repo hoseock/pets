@@ -39,6 +39,12 @@ public class AdminServiceImpl implements AdminService{
 	public int delAuthority(Command command) throws Exception{
 		return adminDAO.delAuthority(command);
 	}
+
+	@Override
+	public String checkAuth(Command command) throws Exception {
+		// TODO Auto-generated method stub
+		return adminDAO.checkAuth(command);
+	}
 	
 //	@Override
 //	public Map<String, Object> selectBoardDetail(Command command) throws Exception {

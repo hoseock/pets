@@ -95,7 +95,6 @@ $(function(){
  	    }else{
  	    	commonModule.fn_ajax({id:id},url,
  	    		function(data){
- 	    		console.dir(data);
  	    			if(data.result==0){
 			   			$('#chkMsg').html("사용가능한 아이디입니다.");
 			   			$('#chkMsg').css('color', 'blue');

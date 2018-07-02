@@ -39,7 +39,8 @@ public class AdminController {
 	@RequestMapping(value="/deleteMember.do")
 	public ModelAndView deleteMember(Command command) throws Exception{
 	    ModelAndView mv = new ModelAndView("jsonView");
-	    adminService.deleteMember(command);   
+	    adminService.deleteMember(command);
+	    
 	    return mv;
 	}
 	
@@ -47,14 +48,16 @@ public class AdminController {
 	public ModelAndView authorize(Command command) throws Exception{
 	    ModelAndView mv = new ModelAndView("jsonView");
 	    adminService.authorize(command);
-	  	//mv.addObject("PAARO", command.getPAARO());
+	    String result=adminService.checkAuth(command);
+	  	mv.addObject("result", result);
 	    return mv;
 	}
 	@RequestMapping(value="/delAuthority.do")
 	public ModelAndView delAuthority(Command command) throws Exception{
 		ModelAndView mv = new ModelAndView("jsonView");
 		adminService.delAuthority(command);
-		//mv.addObject("PAARO", command.getPAARO());
+		String result=adminService.checkAuth(command);
+		mv.addObject("result", result);
 		return mv;
 	}
 
