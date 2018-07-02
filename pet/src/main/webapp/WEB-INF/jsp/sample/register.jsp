@@ -13,6 +13,7 @@ button.reInput{
 }
 </style>
 <script src="../js/jquery/jquery-3.3.1.js"></script>
+<script src='<c:url value="../js/ajax.js"/>'></script>
 <script>
 $(function(){
 	$('#reInput').css('display', 'none');
@@ -82,44 +83,35 @@ function checksubmit(){
 }
 
 $(function(){
-	$('#checkId').on("click", function(){
-		 var id = $('#id').val();
-		 $.ajax({
-		     type : 'POST',  
-		     url : "<c:url value='/sample/checkId.do' />",  
-		     data:{id : id},	
-		     dataType:'json',
-		     success : function(data) {
-		    	var idReg = /^[a-z]+[a-z0-9]{4,19}$/g;
-		    	   if( !idReg.test( $('#id').val() ) ) {
-		    	       alert("아이디는 영문자로 시작하는 5~20자 영문자 또는 숫자이어야 합니다.");
-		    	       return;
-		    	   }
-		   	 	if(data.result==0){
-		    		$('#chkMsg').html("사용가능한 아이디입니다.");
-		    		$('#chkMsg').css('color', 'blue');
-		    		$('#submit').attr('disabled', false);
-		    		$id=$('#id').val();
-		    		$('#hidden').val($id);
-		     	}else{
-		     		$('#chkMsg').html("아이디가 중복입니다.");
-		     		$('#chkMsg').css('color', 'red');
-		     		$('#submit').attr('disabled', true);
-		     	}
-		     }
-		});
+	$('#checkId').on("click", function(){	
+		var id = $('#id').val();
+		var url = "<c:url value='/register/checkId.do' />";
+		var idReg = /^[a-z]+[a-z0-9]{4,19}$/g;
+ 	    if( !idReg.test( $('#id').val() ) ) {
+ 	       alert("아이디는 영문자로 시작하는 5~20자 영문자 또는 숫자이어야 합니다.");
+ 	       return;
+ 	    }else{
+ 	    	commonModule.fn_ajax({id:id},url,
+ 	    		function(data){
+ 	    			if(data.result==0){
+ 	    				console.dir(data);
+			   			$('#chkMsg').html("사용가능한 아이디입니다.");
+			   			$('#chkMsg').css('color', 'blue');
+			    		$('#submit').attr('disabled', false);
+			    		//$id=$('#id').val();
+			    		$('#hidden').val($('#id').val());
+			     	}else{
+			     		console.dir(data);
+			     		$('#chkMsg').html("아이디가 중복입니다.");
+			     		$('#chkMsg').css('color', 'red');
+			     		$('#submit').attr('disabled', true);
+			     	}
+ 	    	 },function(){	
+ 	    	
+ 	    	 });
+ 	    }
 	});
 });
-
-// $(function(){
-// 	$('#reInput').on("click",function(){
-// 		$('#id').val("");
-// 		$('#chkMsg').html("");
-// 		$('#reInput').css('display','none')
-// 		$('#id').attr('disabled', false);		
-// 	});	
-// });
-
 </script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>

@@ -11,6 +11,7 @@ public class Command {
 		private String ADDR2;
 		private String PETTYPE;
 		private String PETRACE;
+		private String PAARO;
 		
 		public String getID() {
 			return ID;
@@ -72,6 +73,14 @@ public class Command {
 		public void setADDR2(String aDDR2) {
 			ADDR2 = aDDR2;
 		}
+		public String getPAARO() {
+			return PAARO;
+		}
+		public void setPAARO(String pAARO) {
+			PAARO = pAARO;
+		}
+		
+		
 		
 	
 }
