@@ -28,7 +28,6 @@ div#wapper{
 			var tr = (this.parentNode.parentNode);
 			commonModule.fn_ajax({ID:$obj},"<c:url value='/admin/deleteMember.do' />",
 					  function(data){
-						console.log(data.command.ID+"삭제");
 						tr.remove();
 					},function(){
 						
@@ -63,6 +62,7 @@ div#wapper{
 </head>
 <body>
 <h2>회원 목록</h2>
+<p align="right"><font size="2em">탈퇴 버튼 클릭시 바로 탈퇴 됩니다. 신중하게 클릭해주세요.</font></p>
 <table class=member_list style="border:1px solid #ccc;width:100% ">
     <thead>
         <tr>
