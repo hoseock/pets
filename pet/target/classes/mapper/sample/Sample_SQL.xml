@@ -8,24 +8,24 @@
                    USER_NM,
                    USER_PHONE,
                    USER_EMAIL,
-                   PAARO
+                   USER_AUTH
               FROM
-                   MEMBERS
+                   USERS
         ]]>
     </select>
     
     <select id = "checkId" parameterType = "String" resultType = "int">
     	SELECT COUNT(*) 
-    	  FROM MEMBERS 
+    	  FROM USERS
     	 WHERE USER_ID = #{ID}
 	</select>
 
 	<insert id="insertInfo" parameterType="command">
 	    <![CDATA[
-	        INSERT INTO MEMBERS
+	        INSERT INTO USERS
 	        (
 	            USER_ID,
-	            USER_PASS,
+	            USER_PW,
 	            USER_NM,
 	            USER_PHONE,
 	            USER_EMAIL,
@@ -61,38 +61,28 @@
 
 	<update id="authorize" parameterType="command">
 	    <![CDATA[
-	        UPDATE MEMBERS
+	        UPDATE USERS
 	        SET
-	            PAARO = PAARO+1
+	            USER_AUTH = 'Y'
 	        WHERE
 	            USER_ID = #{ID}   
 	    ]]>
 	</update>
 	<update id="delAuthority" parameterType="command">
 	    <![CDATA[
-	        UPDATE MEMBERS
+	        UPDATE USERS
 	        SET
-	            PAARO = PAARO-1
+	            USER_AUTH = 'N'
 	        WHERE
 	            USER_ID = #{ID}   
 	    ]]>
 	</update>
-<!-- 	<delete id="deleteMember" parameterType="command"> -->
-<!-- 		<![CDATA[ -->
-<!-- 			DELETE FROM MEMBERS -->
-<!-- 			WHERE -->
-<!-- 				USER_ID = #{ID} -->
-<!-- 		]]> -->
-<!-- 	</delete> -->
+	<delete id="deleteMember" parameterType="command">
+		<![CDATA[
+			DELETE FROM MEMBERS
+ 			WHERE 
+ 				USER_ID = #{ID}
+		]]> 
+	</delete>
 	
-	<update id="deleteMember" parameterType="command">
-	    <![CDATA[
-	        UPDATE MEMBERS 
- 	        SET 
- 	            DEL_GB = 'Y' 
- 	        WHERE 
-	            USER_ID = #{ID}
- 	    ]]> 
-	</update>
-
 </mapper>

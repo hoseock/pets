@@ -1,4 +1,4 @@
-package com.sc.pet.sample.dao;
+package com.sc.pet.register.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.sc.pet.common.dao.AbstractDAO;
 import com.sc.pet.sample.command.Command;
 
-@Repository("sampleDAO")
-public class SampleDAO extends AbstractDAO {
+@Repository("registerDAO")
+public class RegisterDAO extends AbstractDAO {
 	@SuppressWarnings("unchecked")
 
 	public void Register(Command command) throws Exception{

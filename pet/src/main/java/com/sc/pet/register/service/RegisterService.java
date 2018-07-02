@@ -1,11 +1,11 @@
-package com.sc.pet.sample.service;
+package com.sc.pet.register.service;
 
 import java.util.List;
 import java.util.Map;
 
 import com.sc.pet.sample.command.Command;
 
-public interface SampleService {
+public interface RegisterService {
 	List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception;
 
     void Register(Command command) throws Exception;

@@ -1,4 +1,4 @@
-package com.sc.pet.sample.service;
+package com.sc.pet.register.service;
 
 import java.util.List;
 import java.util.Map;
@@ -8,15 +8,15 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
+import com.sc.pet.register.dao.RegisterDAO;
 import com.sc.pet.sample.command.Command;
-import com.sc.pet.sample.dao.SampleDAO;
  
-@Service("sampleService")
-public class SampleServiceImpl implements SampleService{
+@Service("registerService")
+public class RegisterServiceImpl implements RegisterService{
     Logger log = Logger.getLogger(this.getClass());
      
-    @Resource(name="sampleDAO")
-    private SampleDAO sampleDAO;
+    @Resource(name="registerDAO")
+    private RegisterDAO registerDAO;
 
 	@Override
 	public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception {
@@ -26,17 +26,17 @@ public class SampleServiceImpl implements SampleService{
 	@Override
 	public void Register(Command command) throws Exception {
 		// TODO Auto-generated method stub
-		sampleDAO.Register(command);	
+		registerDAO.Register(command);	
 	}
 	@Override
 	public void insertInfo(Command command) throws Exception {
 		// TODO Auto-generated method stub
-		sampleDAO.insertInfo(command);
+		registerDAO.insertInfo(command);
 	}
 	@Override
 	public int checkId(Command command) throws Exception {
 		// TODO Auto-generated method stub
-		return sampleDAO.checkId(command);
+		return registerDAO.checkId(command);
 	}
 	@Override
 	public Map<String, Object> selectBoardDetail(Command command) throws Exception {

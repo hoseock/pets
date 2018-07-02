@@ -1,4 +1,4 @@
-package com.sc.pet.sample.controller;
+package com.sc.pet.register.controller;
 
 import java.util.Map;
 
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sc.pet.register.service.RegisterService;
 import com.sc.pet.sample.command.Command;
-import com.sc.pet.sample.service.SampleService;
 
 @Controller
 @RequestMapping(value="register")
-public class SampleController {
+public class RegisterController {
 	Logger log = Logger.getLogger(this.getClass());
 
-	@Resource(name = "sampleService")
-	private SampleService sampleService;
+	@Resource(name = "registerService")
+	private RegisterService registerService;
 	
 	@RequestMapping(value = "/openRegister.do")
 	public ModelAndView openRegister(Map<String, Object> commandMap) throws Exception {
@@ -30,7 +30,7 @@ public class SampleController {
 	@RequestMapping(value="/insertInfo.do")
 	public ModelAndView insertInfo(Command command) throws Exception{
 	    ModelAndView mv = new ModelAndView("/../../main");
-	    sampleService.insertInfo(command);
+	    registerService.insertInfo(command);
 	    return mv;
 	}
 	
@@ -38,7 +38,7 @@ public class SampleController {
 	public ModelAndView checkId(Command command, @RequestParam("id")String id) throws Exception{
 	    ModelAndView mv = new ModelAndView("jsonView");
 	    command.setID(id);
-	    int result=sampleService.checkId(command);
+	    int result=registerService.checkId(command);
 	    mv.addObject("result", result);
 	    return mv;
 	}
