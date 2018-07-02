@@ -13,7 +13,7 @@ public class AdminDAO extends AbstractDAO {
 	@SuppressWarnings("unchecked")
 	
 	public List<Map<String, Object>> selectMemberList(Map<String, Object> map) throws Exception {
-		return (List<Map<String, Object>>) selectList("sample.selectMemberList", map);
+		return (List<Map<String, Object>>) selectList("admin.selectMemberList", map);
 	}
 
 //	public int updateHitCnt(Command command) throws Exception{
