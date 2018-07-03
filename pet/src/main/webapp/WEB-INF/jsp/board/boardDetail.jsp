@@ -3,6 +3,7 @@
 <html lang="ko">
 <head>
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
+<%@ include file="/WEB-INF/include/include-menuBar.jsp" %>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#list").on("click", function(e){ //목록으로 버튼
@@ -30,9 +31,17 @@ function fn_openBoardUpdate(){
     comSubmit.submit();
 }
 </script>
+<style>
+.wrap{width:900px;margin:0 auto}
+table{border-collapse:collapse;border-spacing:0}
+a{text-decoration:none;color:inherit}
+a:hover{text-decoration:none}
+.button{margin:0;padding:0;width:40px;height:22px;font-size:12px;color:#fff;line-height:20px;border:none;background:#333;cursor:pointer}
+</style>
 </head>
 <body>
 <form id="commonForm" name="commonForm"></form>
+<div class="wrap">
     <table class="board_view">
         <colgroup>
             <col width="15%"/>
@@ -73,8 +82,8 @@ function fn_openBoardUpdate(){
 			</tr>
         </tbody>
     </table>
-     
-    <a href="#this" class="btn" id="list">목록으로</a>
-    <a href="#this" class="btn" id="update">수정하기</a>
+    <a href="#this" class="button" id="list">목록으로</a>
+    <a href="#this" class="button" id="update">수정하기</a>
+</div>
 </body>
 </html>

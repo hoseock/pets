@@ -15,7 +15,7 @@ img,input{vertical-align:top}
 menu,ul,ol,li{list-style:none}
 hr{display:none}
 a{text-decoration:none}
-a:hover{text-decoration:underline}
+a{text-decoration:none;color:inherit}
 button{border:0;background:none;cursor:pointer}
 .hide{visibility:hidden;overflow:hidden;position:absolute;left:-1000em;width:0;height:0;font-size:0;line-height:0}
 .root{min-width:960px}
@@ -61,8 +61,8 @@ function fn_loginForm(){
 <body>
 <form id="commonForm" name="commonForm"></form>
 <div class="sub">	
-				<a href="#register_sub" class="button" id="register_sub"><span>회원가입</span></a>	
-				<a href="#login_sub" class="button" id="login_sub"><span>로그인</span></a>
+				<a href="#register_sub" id="register_sub"><span>회원가입</span></a>	
+				<a href="#login_sub" id="login_sub"><span>로그인</span></a>
 	</div>
 	<div id="header" class="main">
 		<h1>

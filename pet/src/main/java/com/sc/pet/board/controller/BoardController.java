@@ -16,7 +16,7 @@ import com.sc.pet.board.service.BoardService;
 import com.sc.pet.file.service.FileService;
 
 @Controller
-
+@RequestMapping(value = "/board")
 public class BoardController {
 	Logger log = Logger.getLogger(getClass());
 	
@@ -25,12 +25,17 @@ public class BoardController {
 	 @Resource(name="fileService")
 	 private FileService fileService;
 	
-	 	@RequestMapping(value = "/board/openRegister.do")
+	 	@RequestMapping(value = "/openRegisterForm.do")
 		public ModelAndView openRegister(Map<String, Object> commandMap) throws Exception {
 			ModelAndView mv = new ModelAndView("/board/register");
 			return mv;
 		}
-	 	@RequestMapping(value="/board/openBoardList.do")
+	 	@RequestMapping(value = "/openLoginForm.do")
+		public ModelAndView openLoginForm(Map<String, Object> commandMap) throws Exception {
+			ModelAndView mv = new ModelAndView("/board/login");
+			return mv;
+		}
+	 	@RequestMapping(value="/openBoardList.do")
 	    public ModelAndView openBoardList(Command command) throws Exception{
 	        ModelAndView mv = new ModelAndView("/board/boardList");
 	        List<Command> list = boardService.selectBoardList(command);
@@ -38,13 +43,13 @@ public class BoardController {
 	         
 	        return mv;
 	    }
-	    @RequestMapping(value="/board/openBoardWrite.do")
+	    @RequestMapping(value="/openBoardWrite.do")
 	    public ModelAndView openBoardWrite(Command command) throws Exception{
 	        ModelAndView mv = new ModelAndView("/board/boardWrite");
 	        
 	        return mv;
 	    }
-	    @RequestMapping(value="/board/openBoardUpdate.do")
+	    @RequestMapping(value="/openBoardUpdate.do")
 	    public ModelAndView openBoardUpdate(Command command) throws Exception{
 	        ModelAndView mv = new ModelAndView("/board/boardUpdate");  
 	        Map<String,Object> map = boardService.selectBoardDetail(command);
@@ -54,7 +59,7 @@ public class BoardController {
 	    }
 	   
 	    
-	    @RequestMapping(value="/board/deleteBoard.do")
+	    @RequestMapping(value="/deleteBoard.do")
 	    public ModelAndView deleteBoard(Command command) throws Exception{
 	        ModelAndView mv = new ModelAndView("redirect:/board/openBoardList.do");
 	        int result = boardService.deleteBoard(command);
@@ -62,7 +67,7 @@ public class BoardController {
 	        
 	        return mv;
 	    }
-	    @RequestMapping(value="/board/insertBoard.do")
+	    @RequestMapping(value="/insertBoard.do")
 	    public ModelAndView insertBoard(Command command,HttpServletRequest request) throws Exception{
 	        ModelAndView mv = new ModelAndView("redirect:/board/openBoardList.do");
 	      	         
@@ -72,7 +77,7 @@ public class BoardController {
 	    }
 	 
 
-	    @RequestMapping(value="/board/updateBoard.do")
+	    @RequestMapping(value="/updateBoard.do")
 	    public ModelAndView updateBoard(Command command) throws Exception{
 	        ModelAndView mv = new ModelAndView("redirect:/board/openBoardDetail.do");
 			int result = boardService.updateBoard(command);
@@ -82,7 +87,7 @@ public class BoardController {
 	        return mv;
 	    }
 	   
-	    @RequestMapping(value="/board/openBoardDetail.do")
+	    @RequestMapping(value="/openBoardDetail.do")
 		 public ModelAndView openBoardDetail(Command command) throws Exception{
 		     ModelAndView mv = new ModelAndView("/board/boardDetail");
 		      

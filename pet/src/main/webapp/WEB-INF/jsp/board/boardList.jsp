@@ -7,7 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
 <%@ include file="/WEB-INF/include/include-menuBar.jsp" %>
-<link rel="stylesheet" type="text/css" href="/anifinder/css/board.css">
+<link rel="stylesheet" type="text/css" href="/pet/css/board.css">
 
 <script src='<c:url value = "/js/jquery/jquery-3.3.1.js"/>'></script>
 <script type="text/javascript">
@@ -49,7 +49,7 @@ function fn_openBoardDetail(obj){
 	<li><input type="radio" name="searchtype" id="search03" /><label for="search03">내용</label></li>
 	<li><input type="text" title="검색어를 입력하세요" /><input type="submit" value="검색" /></li>
 </ul>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="공지사항을 나타낸 표" class="board_list">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="board_list">
     <colgroup>
         <col width="10%"/>
         <col width="*"/>
@@ -73,7 +73,7 @@ function fn_openBoardDetail(obj){
                         <td>${row.BOARD_ID}</td>
                      	<td><a href="#this" name="title">${row.BOARD_TITLE }</a></td>
                         <td>${row.BOARD_HIT }</td>
-                        <td></td>
+                        <td>${row.BOARD_DATE }</td>
                         <td id="tooltip" style="display:none;">${row.BOARD_CONTENTS }</td>
                     </tr>
                 </c:forEach>
@@ -105,8 +105,7 @@ function fn_openBoardDetail(obj){
 		<a href="#" class="last">마지막</a>
 	</div>
 	<div>
-	
-		<a href="#this" class="btn" id="write">글쓰기</a>
+		<a href="#this" class="button" id="write">글쓰기</a>
 	</div>
 
 </div>

@@ -7,7 +7,7 @@
 table{border-collapse:collapse;border-spacing:0}
 a{text-decoration:none;color:inherit}
 a:hover{text-decoration:none}
-
+.button{margin:0;padding:0;width:40px;height:22px;font-size:12px;color:#fff;line-height:20px;border:none;background:#333;cursor:pointer}
 </style>
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
 <%@ include file="/WEB-INF/include/include-menuBar.jsp" %>
@@ -46,7 +46,7 @@ a:hover{text-decoration:none}
 	    comSubmit.submit();
 	}
 	function fn_addFile(){
-	    var str = "<p><input type='file' name='file_"+(gfv_count++)+"'><a href='#this' class='btn' name='delete'>삭제</a></p>";
+	    var str = "<p><input type='file' name='file_"+(gfv_count++)+"'><a href='#this' class='button' name='delete'>삭제</a></p>";
 	    $("#fileDiv").append(str);
 	    $("a[name='delete']").on("click", function(e){ //삭제 버튼
 	        e.preventDefault();
@@ -87,9 +87,9 @@ a:hover{text-decoration:none}
                 <a href="#this" class="btn" id="delete" name="delete">삭제</a>
             </p>
         </div>
-		<a href="#this" class="btn" id="addFile">파일 추가</a>
-        <a href="#this" class="btn" id="write" >작성하기</a>
-        <a href="#this" class="btn" id="list" >목록으로</a>
+		<a href="#this" class="button" id="addFile">파일 추가</a>
+        <a href="#this" class="button" id="write" >작성하기</a>
+        <a href="#this" class="button" id="list" >목록으로</a>
     </form>
 </div>    
 </body>

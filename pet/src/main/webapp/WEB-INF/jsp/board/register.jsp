@@ -260,7 +260,7 @@ $(function(){
 				<tr>
 					<td>비밀번호 확인</td>
 					<td><input type="password" name="PASSWORD_CHECK" id="pswCheck"
-						placeholder="비밀번호 확인" class="button"><font name="check" size="2"
+						placeholder="비밀번호 확인"><font name="check" size="2"
 						color="red"></font></td>
 				</tr>
 				<tr>

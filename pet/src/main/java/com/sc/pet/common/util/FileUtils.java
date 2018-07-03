@@ -17,7 +17,7 @@ import com.sc.pet.board.command.Command;
 
 @Component("fileUtils")
 public class FileUtils{
-	private static final String filePath = "C:\\CookAndroid\\Project\\aniFinder\\src\\main\\webapp\\WEB-INF\\uploadFiles\\";
+	private static final String filePath = "C:\\CookAndroid\\Project\\pet\\src\\main\\webapp\\WEB-INF\\uploadFiles\\";
 	
 	public static List<Map<String,Object>> parseInsertFileInfo(Command command, HttpServletRequest request) throws Exception{
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)request;
@@ -50,9 +50,9 @@ public class FileUtils{
         		
         		listMap = new HashMap<String,Object>();
         		listMap.put("BOARD_ID", boardIdx);
-        		listMap.put("ORIGINAL_FILE_NM", originalFileName);
-        		listMap.put("STORED_FILE_NM", storedFileName);
-        		listMap.put("FILE_SIZE", multipartFile.getSize());
+        		listMap.put("ORIGINAL_FILES_NM", originalFileName);
+        		listMap.put("STORED_FILES_NM", storedFileName);
+        		listMap.put("FILES_SIZE", multipartFile.getSize());
         		list.add(listMap);
         	}
         }

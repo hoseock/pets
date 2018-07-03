@@ -27,8 +27,8 @@
             BOARD_TITLE,
             BOARD_CONTENTS,
             BOARD_HIT,
-            USER_ID,
-            BOARD_DATE
+            BOARD_DATE,
+            USER_ID
         )
         VALUES
         (
@@ -36,8 +36,8 @@
             #{BOARD_TITLE},
             #{BOARD_CONTENTS},
             0,
-            #{USER_ID},
-            SYSDATE
+            SYSDATE,
+            '작성자'
         )
     ]]>
 	</insert>
@@ -46,7 +46,7 @@
         <![CDATA[
             SELECT BOARD_ID,
                    BOARD_TITLE,
-               	   BORDE_CONTENTS,
+               	   BOARD_CONTENTS,
                    BOARD_HIT,
                    BOARD_DATE,
                    USER_ID
