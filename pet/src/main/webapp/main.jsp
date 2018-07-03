@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -30,7 +29,7 @@
 								<button type="submit" id="login_btn"><span>로그인</span></button>
 							
 							<p>
-								<a href="/pet/sample/openRegister.do"><span>회원가입</span></a>
+								<a href="/pet/board/openRegisterForm.do"><span>회원가입</span></a>
 								<a href="/pet/sample/openRegister.do"><span>ID/</span></a>
 								<a href="/pet/sample/openRegister.do"><span>PW찾기</span></a>
 							</p>

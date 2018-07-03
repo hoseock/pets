@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="file">
+
+<select id="selectFileList" parameterType="command" resultType="hashmap">
+    <![CDATA[
+        SELECT
+            FILES_ID,
+            ORIGINAL_FILES_NM,
+            ROUND(FILES_SIZE/1024,1) AS FILES_SIZE
+        FROM
+            FILES
+        WHERE
+            BOARD_ID = #{BOARD_ID}
+    ]]>
+</select>
+<select id="selectFileInfo" parameterType="command" resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    STORED_FILES_NM,
+			    ORIGINAL_FILES_NM
+			FROM
+			    FILES
+			WHERE
+			    FILES_ID = #{FILES_ID}
+		]]>
+	</select>
+	<insert id="insertFile" parameterType="hashmap">
+    <![CDATA[
+        INSERT INTO FILES
+        (
+            FILES_ID,
+            BOARD_ID,
+            ORIGINAL_FILES_NM,
+            STORED_FILES_NM,
+            FILES_SIZE
+        )
+        VALUES
+        (
+            SEQ_FILES_FILES_ID.NEXTVAL,
+            #{BOARD_ID},
+            #{ORIGINAL_FILES_NM},
+            #{STORED_FILES_NM},
+            #{FILES_SIZE}
+
+        )
+    ]]>
+	</insert>
+	
+</mapper>

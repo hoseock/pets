@@ -1,5 +1,4 @@
 <%@ page pageEncoding="utf-8"%>
- 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title></title>
@@ -8,10 +7,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
  
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/ui.css'/>" />
-
-<!-- jQuery -->
-<script src='<c:url value = "/js/jquery/jquery-3.3.1.js"/>'></script>
-<script src="<c:url value='/js/common.js'/>" charset="utf-8"></script>
 <head>
 <style>
 div,ul,ol,p,td,input,{color:#444;font-family:inherit;font-size:12px;font-weight:normal}
@@ -20,7 +15,7 @@ img,input{vertical-align:top}
 menu,ul,ol,li{list-style:none}
 hr{display:none}
 a{text-decoration:none}
-a:hover{text-decoration:underline}
+a{text-decoration:none;color:inherit}
 button{border:0;background:none;cursor:pointer}
 .hide{visibility:hidden;overflow:hidden;position:absolute;left:-1000em;width:0;height:0;font-size:0;line-height:0}
 .root{min-width:960px}
@@ -36,40 +31,43 @@ button{border:0;background:none;cursor:pointer}
 .sub a span{font-size: 11px; top:0;}
 #header{width:1100px; height:130px;  background:white;}
 </style>
+<!-- jQuery -->
 <script src='<c:url value = "/js/jquery/jquery-3.3.1.js"/>'></script>
 <script src="<c:url value='/js/common.js'/>" charset="utf-8"></script>
 <script>
 $(document).ready(function(){
-    $("#register").on("click", function(e){ //글쓰기 버튼
+    $("#register_sub").on("click", function(e){ //회원가입버튼
         e.preventDefault();
-        fn_register();
+        fn_registerForm();
     });
-    $("#login_sub").on("click", function(e){ //글쓰기 버튼
+    $("#login_sub").on("click", function(e){ //로그인버튼
         e.preventDefault();
-        fn_login();
+        fn_loginForm();
     });
 });
-function fn_register(){
+function fn_registerForm(){
     var comSubmit = new ComSubmit();
-    comSubmit.setUrl("<c:url value='/file/openRegister.do' />");
+    comSubmit.setUrl("<c:url value='/board/openRegisterForm.do' />");
     comSubmit.submit();
     
-}function fn_login(){
+}
+function fn_loginForm(){
     var comSubmit = new ComSubmit();
-    comSubmit.setUrl("<c:url value='/file/openLoginForm.do' />");
+    comSubmit.setUrl("<c:url value='/board/openLoginForm.do' />");
     comSubmit.submit();
 }
 </script>
 </head>
 <body>
+<form id="commonForm" name="commonForm"></form>
 <div class="sub">	
-				<a href="#register" class="button" id="register"><span>회원가입</span></a>	
-				<a href="#login" class="button" id="login_sub"><span>로그인</span></a>
+				<a href="#register_sub" id="register_sub"><span>회원가입</span></a>	
+				<a href="#login_sub" id="login_sub"><span>로그인</span></a>
 	</div>
 	<div id="header" class="main">
 		<h1>
-			<a title="anifinderhelper" href="/anifinder/" target="_top">
-			<img border="0" src="/anifinder/resources/image/logo.jpg">
+			<a title="anifinderhelper" href="/pet/" target="_top">
+			<img border="0" src="/pet/resources/image/logo.jpg">
 			</a>
 		</h1>
 	</div>
