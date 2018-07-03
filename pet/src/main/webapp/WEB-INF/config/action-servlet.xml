@@ -16,8 +16,17 @@
             <bean id="loggerInterceptor" class="com.sc.pet.common.logger.LoggerInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
+    
      <mvc:annotation-driven/>
- 
+     
+    <!--  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        max upload size in bytes
+        <property name="maxUploadSize" value="20971520" /> 20MB
+        max size of file in memory (in bytes)
+        <property name="maxInMemorySize" value="1048576" /> 1MB
+    </bean> -->
+    
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
      
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0" />
@@ -32,4 +41,5 @@
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">  
     	<property name="order" value="1"></property>
 	</bean> 
+	
 </beans>
