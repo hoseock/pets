@@ -47,7 +47,7 @@ $(document).ready(function(){
 });
 function fn_registerForm(){
     var comSubmit = new ComSubmit();
-    comSubmit.setUrl("<c:url value='/board/openRegisterForm.do' />");
+    comSubmit.setUrl("<c:url value='/register/openRegister.do' />");
     comSubmit.submit();
     
 }

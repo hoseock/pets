@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.sc.pet.common.dao.AbstractDAO;
-import com.sc.pet.sample.command.Command;
+import com.sc.pet.register.command.RegisterCommand;
 
 @Repository("adminDAO")
 public class AdminDAO extends AbstractDAO {
@@ -24,18 +24,18 @@ public class AdminDAO extends AbstractDAO {
 //	public Map<String, Object> selectBoardDetail(Command command) throws Exception {
 //		return (Map<String, Object>) selectOne("sample.selectBoardDetail", command);
 //	}
-	public int authorize(Command command) throws Exception{
+	public int authorize(RegisterCommand command) throws Exception{
 	    return update("admin.authorize", command);
 	}
-	public int delAuthority(Command command) throws Exception{
+	public int delAuthority(RegisterCommand command) throws Exception{
 		return update("admin.delAuthority", command);
 	}
 //	
-	public int deleteMember(Command command) throws Exception{
+	public int deleteMember(RegisterCommand command) throws Exception{
 	    return delete("admin.deleteMember", command);
 	}
 	
-	public String checkAuth(Command command) throws Exception{
+	public String checkAuth(RegisterCommand command) throws Exception{
 		String result=(String) selectOne("admin.checkAuth", command);
 	    return result;
 	}

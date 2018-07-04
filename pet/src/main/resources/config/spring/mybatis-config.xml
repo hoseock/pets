@@ -2,6 +2,8 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
    <typeAliases>
-      <typeAlias alias = "command" type = "com.sc.pet.board.command.Command"/>
+      <typeAlias alias = "boardCommand" type = "com.sc.pet.board.command.Command"/>
+      <typeAlias alias = "RegisterCommand" type = "com.sc.pet.register.command.RegisterCommand"/>
+      <typeAlias alias = "FileCommand" type = "com.sc.pet.file.command.FileVO"/>
    </typeAliases>
 </configuration>

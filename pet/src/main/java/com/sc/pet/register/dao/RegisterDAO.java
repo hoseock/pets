@@ -1,24 +1,21 @@
 package com.sc.pet.register.dao;
 
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.stereotype.Repository;
 
 import com.sc.pet.common.dao.AbstractDAO;
-import com.sc.pet.sample.command.Command;
+import com.sc.pet.register.command.RegisterCommand;
 
 @Repository("registerDAO")
 public class RegisterDAO extends AbstractDAO {
 	@SuppressWarnings("unchecked")
 
-	public void Register(Command command) throws Exception{
+	public void Register(RegisterCommand command) throws Exception{
 	    insert("register.register", command);
 	}
-	public void insertInfo(Command command) throws Exception{
+	public void insertInfo(RegisterCommand command) throws Exception{
 	    insert("register.insertInfo", command);
 	}
-	public int checkId(Command command) throws Exception{
+	public int checkId(RegisterCommand command) throws Exception{
 		int result=(Integer)selectOne("register.checkId", command);
 	    return result;
 	}

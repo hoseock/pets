@@ -3,7 +3,7 @@ package com.sc.pet.admin.service;
 import java.util.List;
 import java.util.Map;
 
-import com.sc.pet.sample.command.Command;
+import com.sc.pet.register.command.RegisterCommand;
 
 public interface AdminService {
 	List<Map<String, Object>> selectMemberList(Map<String, Object> map) throws Exception;
@@ -14,8 +14,8 @@ public interface AdminService {
 //   
 //    Map<String, Object> selectBoardDetail(Command command) throws Exception;
   
-	int authorize(Command command) throws Exception;
-	int delAuthority(Command command) throws Exception;
-	int deleteMember(Command command) throws Exception;
-	String checkAuth(Command command) throws Exception;
+	int authorize(RegisterCommand command) throws Exception;
+	int delAuthority(RegisterCommand command) throws Exception;
+	int deleteMember(RegisterCommand command) throws Exception;
+	String checkAuth(RegisterCommand command) throws Exception;
 }

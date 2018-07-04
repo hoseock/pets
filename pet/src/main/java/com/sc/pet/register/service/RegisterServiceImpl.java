@@ -8,8 +8,8 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
+import com.sc.pet.register.command.RegisterCommand;
 import com.sc.pet.register.dao.RegisterDAO;
-import com.sc.pet.sample.command.Command;
  
 @Service("registerService")
 public class RegisterServiceImpl implements RegisterService{
@@ -24,22 +24,22 @@ public class RegisterServiceImpl implements RegisterService{
 		return null;
 	}
 	@Override
-	public void Register(Command command) throws Exception {
+	public void Register(RegisterCommand command) throws Exception {
 		// TODO Auto-generated method stub
 		registerDAO.Register(command);	
 	}
 	@Override
-	public void insertInfo(Command command) throws Exception {
+	public void insertInfo(RegisterCommand command) throws Exception {
 		// TODO Auto-generated method stub
 		registerDAO.insertInfo(command);
 	}
 	@Override
-	public int checkId(Command command) throws Exception {
+	public int checkId(RegisterCommand command) throws Exception {
 		// TODO Auto-generated method stub
 		return registerDAO.checkId(command);
 	}
 	@Override
-	public Map<String, Object> selectBoardDetail(Command command) throws Exception {
+	public Map<String, Object> selectBoardDetail(RegisterCommand command) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}

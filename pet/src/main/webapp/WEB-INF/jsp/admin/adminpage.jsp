@@ -10,7 +10,7 @@
 	<caption>관리자 페이지</caption>
 	<p>관리자님 안녕하세요.</p>
 	<input type="button" id="manage_member" value="회원관리"/>
-	<a href="/pet/sample/openMemberList.do" class="btn" id="manage_member">회원관리</a>
+	<a href="/pet/admin/openMemberList.do" class="btn" id="manage_member">회원관리</a>
 	<input type="button" id="write_recipe" value="조리법 올리기"/>
 	<a href="#this" class="btn" id="write_recipe">조리법 올리기</a>
 	<input type="button" id="write_medical" value="의료 올리기"/>

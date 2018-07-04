@@ -1,4 +1,4 @@
-package com.sc.pet.sample.command;
+package com.sc.pet.file.command;
 
 import java.util.List;
 

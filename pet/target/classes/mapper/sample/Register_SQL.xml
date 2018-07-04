@@ -9,7 +9,7 @@
     	 WHERE USER_ID = #{ID}
 	</select>
 
-	<insert id="insertInfo" parameterType="command">
+	<insert id="insertInfo" parameterType="RegisterCommand">
 	    <![CDATA[
 	        INSERT INTO USERS
 	        (

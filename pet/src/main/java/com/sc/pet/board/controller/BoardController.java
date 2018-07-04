@@ -27,7 +27,7 @@ public class BoardController {
 	
 	 	@RequestMapping(value = "/openRegisterForm.do")
 		public ModelAndView openRegister(Map<String, Object> commandMap) throws Exception {
-			ModelAndView mv = new ModelAndView("/board/register");
+			ModelAndView mv = new ModelAndView("/sample/register");
 			return mv;
 		}
 	 	@RequestMapping(value = "/openLoginForm.do")

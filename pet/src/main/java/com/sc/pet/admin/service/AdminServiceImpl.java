@@ -9,8 +9,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.sc.pet.admin.dao.AdminDAO;
-import com.sc.pet.register.dao.RegisterDAO;
-import com.sc.pet.sample.command.Command;
+import com.sc.pet.register.command.RegisterCommand;
  
 @Service("adminService")
 public class AdminServiceImpl implements AdminService{
@@ -26,22 +25,22 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public int deleteMember(Command command) throws Exception {
+	public int deleteMember(RegisterCommand command) throws Exception {
 		// TODO Auto-generated method stub
 		return adminDAO.deleteMember(command);
 	}
 	
 	@Override
-	public int authorize(Command command) throws Exception{
+	public int authorize(RegisterCommand command) throws Exception{
 	     return adminDAO.authorize(command);
 	}
 	@Override
-	public int delAuthority(Command command) throws Exception{
+	public int delAuthority(RegisterCommand command) throws Exception{
 		return adminDAO.delAuthority(command);
 	}
 
 	@Override
-	public String checkAuth(Command command) throws Exception {
+	public String checkAuth(RegisterCommand command) throws Exception {
 		// TODO Auto-generated method stub
 		return adminDAO.checkAuth(command);
 	}

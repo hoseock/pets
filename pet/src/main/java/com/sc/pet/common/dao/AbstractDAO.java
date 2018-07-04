@@ -7,7 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sc.pet.sample.command.Command;
+import com.sc.pet.file.command.FileVO;
 
 public class AbstractDAO {
     protected Log log = LogFactory.getLog(AbstractDAO.class);

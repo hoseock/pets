@@ -3,7 +3,7 @@
 
 <mapper namespace="file">
 
-<select id="selectFileList" parameterType="command" resultType="hashmap">
+<select id="selectFileList" parameterType="FileCommand" resultType="hashmap">
     <![CDATA[
         SELECT
             FILES_ID,
@@ -15,7 +15,7 @@
             BOARD_ID = #{BOARD_ID}
     ]]>
 </select>
-<select id="selectFileInfo" parameterType="command" resultType="hashmap">
+<select id="selectFileInfo" parameterType="FileCommand" resultType="hashmap">
 		<![CDATA[
 			SELECT
 			    STORED_FILES_NM,

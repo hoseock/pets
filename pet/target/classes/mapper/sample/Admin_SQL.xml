@@ -14,7 +14,7 @@
         ]]>
     </select>
    
-	<update id="authorize" parameterType="command">
+	<update id="authorize" parameterType="RegisterCommand">
 	    <![CDATA[
 	        UPDATE USERS
 	        SET
@@ -23,7 +23,7 @@
 	            USER_ID = #{ID}   
 	    ]]>
 	</update>
-	<update id="delAuthority" parameterType="command">
+	<update id="delAuthority" parameterType="RegisterCommand">
 	    <![CDATA[
 	        UPDATE USERS
 	        SET
@@ -32,7 +32,7 @@
 	            USER_ID = #{ID}   
 	    ]]>
 	</update>
-	<delete id="deleteMember" parameterType="command">
+	<delete id="deleteMember" parameterType="RegisterCommand">
 		<![CDATA[
 			DELETE FROM USERS
  			WHERE 

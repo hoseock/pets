@@ -16,7 +16,7 @@
         ]]>
 	</select>
 		
-	<insert id="insertBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="BOARD_ID">
+	<insert id="insertBoard" parameterType="boardCommand" useGeneratedKeys="true" keyProperty="BOARD_ID">
     <selectKey keyProperty="BOARD_ID" resultType="string" order="BEFORE">
         SELECT SEQ_BOARD_BOARD_ID.NEXTVAL FROM DUAL
     </selectKey>
@@ -42,7 +42,7 @@
     ]]>
 	</insert>
 
-		<select id="selectBoardDetail" parameterType="command" resultType="hashmap">
+		<select id="selectBoardDetail" parameterType="boardCommand" resultType="hashmap">
         <![CDATA[
             SELECT BOARD_ID,
                    BOARD_TITLE,
@@ -56,7 +56,7 @@
         ]]>
 	</select>
 
-	<update id="updateHitCount" parameterType="command">
+	<update id="updateHitCount" parameterType="boardCommand">
     <![CDATA[
         UPDATE BOARD
         SET BOARD_HIT = NVL(BOARD_HIT, 0) + 1
