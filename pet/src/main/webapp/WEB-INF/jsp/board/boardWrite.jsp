@@ -2,15 +2,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<style>
-.wrap{width:800px;margin:0 auto}
-table{border-collapse:collapse;border-spacing:0}
-a{text-decoration:none;color:inherit}
-a:hover{text-decoration:none}
-.button{margin:0;padding:0;width:40px;height:22px;font-size:12px;color:#fff;line-height:20px;border:none;background:#333;cursor:pointer}
-</style>
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
 <%@ include file="/WEB-INF/include/include-menuBar.jsp" %>
+<link rel="stylesheet" type="text/css" href="/pet/css/board.css">
 <script type="text/javascript">
 	var gfv_count = 1
 	$(document).ready(function(){
@@ -62,6 +56,7 @@ a:hover{text-decoration:none}
 <body>
 <form id="commonForm" name="commonForm"></form>
 <div class="wrap">
+	<a>자유게시판</a>
     <form id="frm" name="frm" enctype="multipart/form-data">
         <table class="board_view">
             <colgroup>

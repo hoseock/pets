@@ -3,7 +3,8 @@
 <html lang="ko">
 <head>
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
-
+<%@ include file="/WEB-INF/include/include-menuBar.jsp" %>
+<link rel="stylesheet" type="text/css" href="/pet/css/board.css">
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#list").on("click", function(e){ //목록으로 버튼
@@ -46,16 +47,12 @@ function fn_deleteBoard(){
     comSubmit.submit();
 }
 </script>
-<style>
-.button{margin:0;padding:0;width:40px;height:22px;font-size:12px;color:#fff;line-height:20px;border:none;background:#333;cursor:pointer}
-</style>
 </head>
 <body>
 <form id="commonForm" name="commonForm"></form>
-<div id="menu_bar">
-	<%@ include file="/WEB-INF/include/include-menuBar.jsp"%>
-</div>
+<div class="wrap">
     <form id="frm">
+    <a>자유게시판</a>
         <table class="board_view">
             <colgroup>
                 <col width="15%"/>
@@ -94,10 +91,10 @@ function fn_deleteBoard(){
             </tbody>
         </table>
     </form>
-     
-    <a href="#this" class="btn" id="list" class="button">목록으로</a>
-    <a href="#this" class="btn" id="update" class="button">저장하기</a>
-    <a href="#this" class="btn" id="delete" class="button">삭제하기</a>
 
+    <a href="#this" id="list" class="button">목록으로</a>
+    <a href="#this" id="update" class="button">저장하기</a>
+    <a href="#this" id="delete" class="button">삭제하기</a>
+</div>
 </body>
 </html>

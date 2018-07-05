@@ -8,10 +8,8 @@
 <%@ include file="/WEB-INF/include/include-header.jsp" %>
 <%@ include file="/WEB-INF/include/include-menuBar.jsp" %>
 <link rel="stylesheet" type="text/css" href="/pet/css/board.css">
-
 <script src='<c:url value = "/js/jquery/jquery-3.3.1.js"/>'></script>
 <script type="text/javascript">
-
 $(document).ready(function(){
     $("#write").on("click", function(e){ //글쓰기 버튼
         e.preventDefault();
@@ -42,7 +40,7 @@ function fn_openBoardDetail(obj){
 <body>
 <form id="commonForm" name="commonForm"></form>
 <div class="wrap">
-<h2>게시판 목록</h2>
+<a>자유게시판</a>
 <ul class="board_search">
 	<li><input type="radio" name="searchtype" id="search01" checked="checked" /><label for="search01">이름</label></li>
 	<li><input type="radio" name="searchtype" id="search02" /><label for="search02">제목</label></li>
@@ -62,7 +60,7 @@ function fn_openBoardDetail(obj){
             <th scope="col">제목</th>
             <th scope="col">조회수</th>
             <th scope="col">작성일</th>
-            <th scope="col">콘텐츠</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -87,9 +85,9 @@ function fn_openBoardDetail(obj){
          
     </tbody>
 </table>
-<div id="PAGE_NAVI"></div>
+<!-- <div id="PAGE_NAVI"></div>
     <input type="hidden" id="PAGE_INDEX" name="PAGE_INDEX"/>
-<!-- page_navi start -->
+page_navi start
 	<div class="page_navi">
 		<a href="#" class="first">처음</a>
 		<a href="#" class="prev">이전</a>
@@ -103,7 +101,7 @@ function fn_openBoardDetail(obj){
 		</span>                    
 		<a href="#" class="next">다음</a>
 		<a href="#" class="last">마지막</a>
-	</div>
+	</div> -->
 	<div>
 		<a href="#this" class="button" id="write">글쓰기</a>
 	</div>
