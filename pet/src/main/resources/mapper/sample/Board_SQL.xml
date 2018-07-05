@@ -42,18 +42,18 @@
     ]]>
 	</insert>
 
-		<select id="selectBoardDetail" parameterType="boardCommand" resultType="hashmap">
-        <![CDATA[
-            SELECT BOARD_ID,
-                   BOARD_TITLE,
-               	   BOARD_CONTENTS,
-                   BOARD_HIT,
-                   BOARD_DATE,
-                   USER_ID
-            FROM BOARD
-            WHERE BOARD_ID = #{BOARD_ID}
-          	
-        ]]>
+	<select id="selectBoardDetail" parameterType="boardCommand" resultType="hashmap">
+    <![CDATA[
+        SELECT BOARD_ID,
+               BOARD_TITLE,
+           	   BOARD_CONTENTS,
+               BOARD_HIT,
+               BOARD_DATE,
+               USER_ID
+        FROM BOARD
+        WHERE BOARD_ID = #{BOARD_ID}
+      	
+    ]]>
 	</select>
 
 	<update id="updateHitCount" parameterType="boardCommand">
@@ -64,4 +64,23 @@
     ]]>
 	</update>
 	
-</mapper>
+	<update parameterType="boardCommand" id="updateBoard">
+	<![CDATA[
+		        UPDATE BOARD
+		        SET
+		            BOARD_TITLE = #{BOARD_TITLE},
+		            BOARD_CONTENTS = #{BOARD_CONTENTS}
+		        WHERE
+		            BOARD_ID = #{BOARD_ID}   
+		    ]]>
+	</update>
+	
+	<delete parameterType="boardCommand" id="deleteBoard">
+	<![CDATA[
+		       	DELETE 
+		       	  FROM BOARD
+		        WHERE
+		            BOARD_ID = #{BOARD_ID}   
+		    ]]>
+	</delete>
+	</mapper>

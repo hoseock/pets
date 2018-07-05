@@ -14,4 +14,3 @@ public interface BoardService {
 	int deleteBoard(Command command) throws Exception;
 	void insertBoard(Command command, HttpServletRequest request) throws Exception;
 }
-

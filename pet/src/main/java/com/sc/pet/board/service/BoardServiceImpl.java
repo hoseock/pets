@@ -63,7 +63,6 @@ public class BoardServiceImpl implements BoardService {
 		    Map<String, Object> resultMap = new HashMap<String,Object>();
 		    Map<String, Object> tempMap = boardDAO.selectBoardDetail(command);
 		    resultMap.put("map", tempMap);
-		     
 		    List<Map<String,Object>> list = FileDAO.selectFileList(command);
 		    resultMap.put("list", list);
 		     
@@ -71,4 +70,3 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 }
-
